@@ -32,17 +32,20 @@ const STOP_WORDS = [
 
 function printWordFreq(file, callback) {
   // Read in `file` and print out the frequency of words in that file.
-  fs.readFile(file, 'utf8', (err, data) => {
+  fs.readFile('/home/atlas/momentum/code/javascript/node/node-js-word-frequency-Austin-Cathey/the-hill-we-climb.txt', 'utf8', (err, data) => {
     if (err) {
       console.error('Error reading the file:', err)
       process.exit(1)
-    }
+    } else (wordCount) => {
     // TODO: write code to count the words in the file
-    console.log('Initial data read from file: ', data)
-    callback('Your word count results should be passed in to this callback')
+    const array = file.trim().split(""); 
+    
+    console.log(, data)
+    callback()
+    }
   })
 }
 
 printWordFreq(filePath, (wordCount) => {
-  console.log('The results from your word counts:', wordCount)
+  console.log(callback, wordCount)
 })
