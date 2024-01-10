@@ -40,19 +40,19 @@ function printWordFreq(file, callback) {
       .toLowerCase()
       .split(/\W+/)
       .sort();
-    const frequency = {};
+    const frequencyCount = {};
 
     for (word of wordCount) {
       if (STOP_WORDS.includes(word)) {
         continue;
       }
-      if (word in frequency) {
-        frequency[word]++;
+      if (word in frequencyCount) {
+        frequencyCount[word]++;
       } else {
-        frequency[word] = 1;
+        frequencyCount[word] = 1;
       }
     }
-    callback(frequency);
+    callback(frequencyCount);
   });
 }
 
