@@ -36,13 +36,21 @@ function printWordFreq(file, callback) {
       console.error("Error reading the file:", err);
       process.exit(1);
     }
+    //file->data split at each word
     const wordCount = data
       .toLowerCase()
+      .trim()
       .split(/\W+/)
+      .filter((word) => word.length > 0)
       .sort();
+      console.log(wordCount)
+      //put results into empty object
     const frequencyCount = {};
-
+      //for loop that puts word into frequency or ++ if already there
     for (word of wordCount) {
+      /* if (word === '') {
+        continue;
+      } */
       if (STOP_WORDS.includes(word)) {
         continue;
       }
